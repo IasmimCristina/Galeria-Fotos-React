@@ -30,6 +30,13 @@ export const insert = async (file: File) => {
     let randomName = createId();
     let newFile = ref(storage, `images/${randomName}`);
     let upload = await uploadBytes(newFile, file);
+    // Upload.ref é a referência da foto.
+    let photoUrl = await getDownloadURL(upload.ref)
+
+    return {
+      name: upload.ref.name,
+      url: photoUrl
+    } as Photo;
   } else {
     return new Error("Tipo de arquivo não suportado!");
   }

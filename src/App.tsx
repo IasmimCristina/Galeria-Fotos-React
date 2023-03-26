@@ -1,10 +1,12 @@
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect, FormEvent, HTMLInputTypeAttribute } from "react";
 import * as Item from './App.styles';// Itens de estilo = S itens
 import * as Photos from './services/photos'
 import { Photo } from "./types/Photo";
 import { PhotoItem } from "./components/PhotoItem";
 const App = () => {
+  const [addFileType, setAddFileType] = useState(false);
+
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -34,10 +36,30 @@ const App = () => {
     const file = formData.get('image') as File;
     if (file && file.size > 0) {
       setUploading(true);
-      //Envio do arquivo
-      setLoading(false);
+      //Envio do arquivo:
+      let result = await Photos.insert(file);
+      setUploading(false);
+
+      // Se for um erro:
+      if (result instanceof Error) {
+        alert(`${result.name} -- ${result.message}`);
+      } else {
+        let newPhotosList = [...photos];
+        newPhotosList.push(result);
+        setPhotos(newPhotosList);
+      }
+
+
     }
-  }
+  };
+  const addingFileType = () => {
+    setAddFileType(true)
+    let inputFile = (document.querySelector(".archive") as HTMLInputElement);
+    let fileName = inputFile.value;
+    let spanFileName = document.querySelector(".file-name") as HTMLSpanElement;
+    // console.log(document.querySelector(".archive") as HTMLInputElement)
+    spanFileName.innerHTML = fileName;
+  };
 
   return (
 
@@ -53,9 +75,17 @@ const App = () => {
         <Item.UploadAreaPhotos>
           {/* {Área de upload} */}
           <Item.UploadForm method="POST" onSubmit={handleFormSubmit} >
-            <label htmlFor="image">Clique aqui para escolher um aquivo</label>
-            <input type="file" name="image" id="image" className="archive" />
+            <label htmlFor="image">
+              <span className="material-symbols-outlined">
+                cloud_upload
+              </span>
+              Escolha um aquivo
+            <span className="file-name">Nenhum selecionado</span>
+            </label>
+            <input type="file" name="image" id="image" className="archive" onChange={addingFileType} />
+           
             <input type="submit" value="Enviar" className="submit-button" />
+            {uploading && <span>Enviando...</span>}
           </Item.UploadForm>
 
           {/* Quando houver carregamento das imagens na tela: */}
@@ -81,7 +111,7 @@ const App = () => {
 
             <Item.Warning>
               <div className="emoji">📸</div>
-              <div className="message">Não há fotos, faça o upload abaixo para preencher a sua galeria!</div>
+              <div className="message">Não há fotos cadastradas. Faça o upload!</div>
 
             </Item.Warning>
           }

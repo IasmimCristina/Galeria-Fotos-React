@@ -10,11 +10,11 @@ export const Container = styled.div`
 export const Area = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
 `;
 
 export const UploadAreaPhotos = styled.div`
-  padding: 20px;
+  padding: 10px;
   max-width: 80vw;
   border-radius: 10px;
   border: 5px solid rgba(171, 138, 186, 0.1);
@@ -73,7 +73,6 @@ export const Warning = styled.div`
 `;
 
 export const PhotosList = styled.div`
- 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
@@ -100,34 +99,56 @@ export const UploadForm = styled.form`
     font-weight: bold;
     cursor: pointer;
     border-radius: 20px;
-    border: 2px solid #39393a;
-    
+    border: 3px solid #8c7aa9;
 
     &:hover {
       transition: all 0.2s;
-      border: 2px solid #297373;
+      border: 3px solid #297373;
       color: #297373;
       background-color: #e6e6e6;
     }
   }
+  /* Estilização da área de arquivos */
 
   input[type="file"] {
-    display: none;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  input[type="file"]:focus + label {
+    background-color: #297373;
   }
 
   label {
-    color: #297373 ;
+    color: #297373;
     cursor: pointer;
-   
+    display: flex;
+    align-items: center;
+    gap: 5px;
     padding: 10px;
     border-radius: 10px;
-    border: 3px solid #23022e;
+    border: 3px solid #8c7aa9;
+    background-color: #eaddff;
 
     &:hover {
+      background-color: #297373;
+    }
+    &:hover,
+    &:hover .material-symbols-outlined {
       transition: all 0.2s;
-      background-color: #23022e;
       color: #e6e6e6;
-      border: 3px solid #297373;
-     }
+    }
+
+    .material-symbols-outlined {
+      color: #297373;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    }
+  }
+
+  span {
+    color: #522a27;
   }
 `;

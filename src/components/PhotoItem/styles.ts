@@ -15,7 +15,7 @@ border: 4px solid #e6e6e6;
 box-shadow: 2px 2px 15px grey;
 img {
   max-width: 100%;
-  bisplay: block;
+  display: block;
   border-radius:15px;
 }
 
