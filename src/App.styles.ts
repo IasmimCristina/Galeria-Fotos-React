@@ -1,21 +1,20 @@
 import styled from "styled-components";
-
+import { devices } from "./mediaQueries";
 export const Container = styled.div`
   background-color: #e6e6e6;
   color: #e6e6e6;
   min-height: 100vh;
-  min-width: 100vw;
 `;
 
 export const Area = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 `;
 
 export const UploadAreaPhotos = styled.div`
   padding: 10px;
-  max-width: 80vw;
+
   border-radius: 10px;
   border: 5px solid rgba(171, 138, 186, 0.1);
   display: flex;
@@ -23,29 +22,71 @@ export const UploadAreaPhotos = styled.div`
   justify-content: start;
   align-items: center;
   background-color: rgba(171, 138, 186, 0.2);
+  @media ${devices.mobile} {
+    max-width: 95vw;
+  }
+  @media ${devices.tablet} {
+    max-width: 96vw;
+  }
+  @media ${devices.laptop} {
+    max-width: 85vw;
+  }
 `;
 
 export const Header = styled.div`
-  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100vw;
   padding: 1.2rem;
   background-color: #8c7aa9;
-  border-bottom: 15px solid #39393a;
-  margin-bottom: 80px;
+
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 10px 5px 15px grey;
+  @media ${devices.mobile} {
+    height: 15vh;
+    border-bottom: 10px solid #39393a;
+    margin-bottom: 20px;
+  }
+  @media ${devices.tablet} {
+    border-bottom: 15px solid #39393a;
+    margin-bottom: 50px;
+    height: 20vh;
+  }
+  @media ${devices.laptop} {
+    border-bottom: 15px solid #39393a;
+    margin-bottom: 80px;
+    height: 15vh;
+  }
+
   h1 {
     text-align: center;
-    font-size: 5rem;
     font-weight: 600;
     text-shadow: 3px 5px #39393a;
+
+    @media ${devices.mobile} {
+      background-color: #39393a;
+      font-size: 2.8rem;
+      text-shadow: 2px 3px #232327;
+      width: 80vw;
+      height: 90px;
+      padding: 15px;
+      border-radius: 45px;
+    }
+    @media ${devices.tablet} {
+      background-color: #8c7aa9;
+      font-size: 4.5rem;
+    }
+    @media ${devices.laptop} {
+      background-color: #8c7aa9;
+      font-size: 5rem;
+    }
   }
 `;
 
 export const Warning = styled.div`
   background-color: #39393a;
-  height: 15rem;
-  width: 30rem;
 
   border-radius: 3rem;
   display: flex;
@@ -56,26 +97,71 @@ export const Warning = styled.div`
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 10px 5px 25px grey;
   margin: 0 auto;
-  margin-top: 50px;
 
+  @media ${devices.mobile} {
+    height: 12rem;
+    width: 15rem;
+    margin-top: 0px;
+    justify-content: space-evenly;
+  }
+
+  @media ${devices.tablet} {
+    height: 15rem;
+    width: 30rem;
+    margin-bottom: 20px;
+  }
+  @media ${devices.laptop} {
+    height: 15rem;
+    width: 30rem;
+    margin-top: 50px;
+  }
   .message {
     color: #c6c5b9;
-    font-size: 1.5rem;
     font-weight: bold;
-    width: 400px;
-
     text-align: center;
+
+    @media ${devices.mobile} {
+      font-size: 1.2rem;
+      width: 150px;
+    }
+    @media ${devices.tablet} {
+      width: 400px;
+      font-size: 1.3rem;
+    }
+    @media ${devices.laptop} {
+      width: 400px;
+      font-size: 1.5rem;
+    }
   }
 
   .emoji {
-    font-size: 5.5rem;
+    @media ${devices.mobile} {
+      font-size: 3.5rem;
+    }
+    @media ${devices.tablet} {
+      font-size: 4.5rem;
+    }
+    @media ${devices.laptop} {
+      font-size: 5.5rem;
+    }
   }
 `;
 
 export const PhotosList = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+
+  @media ${devices.mobile} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  @media ${devices.tablet} {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  @media ${devices.laptop} {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
 `;
 
 export const UploadForm = styled.form`
@@ -91,6 +177,28 @@ export const UploadForm = styled.form`
   gap: 5vw;
   align-items: center;
 
+  span {
+    font-weight: bolder;
+    text-shadow: 0.5px 1px #eaddff;
+    font-style: italic;
+  }
+
+  @media ${devices.mobile} {
+    height: 19vh;
+    flex-direction: column;
+    gap: 1.5vh;
+  }
+  @media ${devices.tablet} {
+    width: 85%;
+    flex-direction: row;
+    gap: 1vw;
+    height: 17vh;
+  }
+  @media ${devices.laptop} {
+    width: 75%;
+    gap: 1.5vw;
+    height: 15vh;
+  }
   .submit-button {
     background-color: #297373;
     padding: 8px;
@@ -101,6 +209,18 @@ export const UploadForm = styled.form`
     border-radius: 20px;
     border: 3px solid #8c7aa9;
 
+    @media ${devices.mobile} {
+      height: 5.2vh;
+      font-size: large;
+    }
+    @media ${devices.tablet} {
+      font-size: 1rem;
+      height: 4vh;
+      width: 6rem;
+    }
+    @media ${devices.laptop} {
+      /* FALTA TEMRINAR ESSES DETALHES DA REPSONSIVIDADE! */
+    }
     &:hover {
       transition: all 0.2s;
       border: 3px solid #297373;
@@ -132,6 +252,16 @@ export const UploadForm = styled.form`
     border-radius: 10px;
     border: 3px solid #8c7aa9;
     background-color: #eaddff;
+    @media ${devices.tablet} {
+      width: 85%;
+      display: flex;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    @media ${devices.laptop} {
+      width:70%;
+    }
+
 
     &:hover {
       background-color: #297373;

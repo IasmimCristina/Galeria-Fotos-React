@@ -79,8 +79,8 @@ const App = () => {
               <span className="material-symbols-outlined">
                 cloud_upload
               </span>
-              Escolha um aquivo
-            <span className="file-name">Nenhum selecionado</span>
+              Escolha uma imagem
+            <span className="file-name">Nenhuma selecionada</span>
             </label>
             <input type="file" name="image" id="image" className="archive" onChange={addingFileType} />
            
