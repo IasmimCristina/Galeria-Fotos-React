@@ -29,7 +29,7 @@ export const UploadAreaPhotos = styled.div`
     max-width: 96vw;
   }
   @media ${devices.laptop} {
-    max-width: 85vw;
+    width: 85vw;
   }
 `;
 
@@ -111,8 +111,8 @@ export const Warning = styled.div`
     margin-bottom: 20px;
   }
   @media ${devices.laptop} {
-    height: 15rem;
-    width: 30rem;
+    height: 18rem;
+    width: 40rem;
     margin-top: 50px;
   }
   .message {
@@ -130,7 +130,7 @@ export const Warning = styled.div`
     }
     @media ${devices.laptop} {
       width: 400px;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
   }
 
@@ -142,7 +142,7 @@ export const Warning = styled.div`
       font-size: 4.5rem;
     }
     @media ${devices.laptop} {
-      font-size: 5.5rem;
+      font-size: 9rem;
     }
   }
 `;
@@ -195,7 +195,7 @@ export const UploadForm = styled.form`
     height: 17vh;
   }
   @media ${devices.laptop} {
-    width: 75%;
+    width: 85%;
     gap: 1.5vw;
     height: 15vh;
   }
@@ -219,7 +219,9 @@ export const UploadForm = styled.form`
       width: 6rem;
     }
     @media ${devices.laptop} {
-      /* FALTA TEMRINAR ESSES DETALHES DA REPSONSIVIDADE! */
+      font-size: 1.2rem;
+      height: 5vh;
+      width: 7rem;
     }
     &:hover {
       transition: all 0.2s;
