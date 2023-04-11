@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "./mediaQueries";
+import { devices } from "../mediaQueries";
 export const Container = styled.div`
   background-color: #e6e6e6;
   color: #e6e6e6;

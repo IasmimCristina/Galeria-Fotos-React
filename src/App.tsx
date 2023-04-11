@@ -1,6 +1,6 @@
 
 import { useState, useEffect, FormEvent, HTMLInputTypeAttribute } from "react";
-import * as Item from './App.styles';// Itens de estilo = S itens
+import * as Item from './styles/App.styles';// Itens de estilo = S itens
 import * as Photos from './services/photos'
 import { Photo } from "./types/Photo";
 import { PhotoItem } from "./components/PhotoItem";
@@ -56,8 +56,7 @@ const App = () => {
     setAddFileType(true)
     let inputFile = (document.querySelector(".archive") as HTMLInputElement);
     let fileName = inputFile.value;
-    let spanFileName = document.querySelector(".file-name") as HTMLSpanElement;
-    // console.log(document.querySelector(".archive") as HTMLInputElement)
+    let spanFileName = document.querySelector(".file-name") as HTMLSpanElement;    
     spanFileName.innerHTML = fileName;
   };
 
