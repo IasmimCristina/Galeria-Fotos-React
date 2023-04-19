@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { devices } from "../mediaQueries";
 export const Container = styled.div`
-  background-color: #e6e6e6;
-  color: #e6e6e6;
+  background-color: ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.secondary};
   min-height: 100vh;
 `;
 
@@ -16,12 +16,12 @@ export const UploadAreaPhotos = styled.div`
   padding: 10px;
 
   border-radius: 10px;
-  border: 5px solid rgba(171, 138, 186, 0.1);
+  border: 5px solid ${(props) => props.theme.colors.transparentBckgSec};
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background-color: rgba(171, 138, 186, 0.2);
+  background-color: ${(props) => props.theme.colors.transparentBckg};
   @media ${devices.mobile} {
     max-width: 95vw;
   }
@@ -37,25 +37,25 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  gap: 1rem;
   width: 100vw;
   padding: 1.2rem;
-  background-color: #8c7aa9;
+  background-color: ${(props) => props.theme.colors.primary};
 
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 10px 5px 15px grey;
   @media ${devices.mobile} {
     height: 15vh;
-    border-bottom: 10px solid #39393a;
+    border-bottom: 10px solid ${(props) => props.theme.colors.shadow};
     margin-bottom: 20px;
   }
   @media ${devices.tablet} {
-    border-bottom: 15px solid #39393a;
+    border-bottom: 15px solid ${(props) => props.theme.colors.shadow};
     margin-bottom: 50px;
     height: 20vh;
   }
   @media ${devices.laptop} {
-    border-bottom: 15px solid #39393a;
+    border-bottom: 15px solid ${(props) => props.theme.colors.shadow};
     margin-bottom: 80px;
     height: 15vh;
   }
@@ -63,37 +63,37 @@ export const Header = styled.div`
   h1 {
     text-align: center;
     font-weight: 600;
-    text-shadow: 3px 5px #39393a;
+    text-shadow: 3px 5px ${(props) => props.theme.colors.shadow};
 
     @media ${devices.mobile} {
-      background-color: #39393a;
+      background-color: ${(props) => props.theme.colors.shadow};
       font-size: 2.8rem;
-      text-shadow: 2px 3px #232327;
+      text-shadow: 2px 3px ${(props) => props.theme.colors.textShadow};
       width: 80vw;
       height: 90px;
       padding: 15px;
       border-radius: 45px;
     }
     @media ${devices.tablet} {
-      background-color: #8c7aa9;
+      background-color: ${(props) => props.theme.colors.primary};
       font-size: 4.5rem;
     }
     @media ${devices.laptop} {
-      background-color: #8c7aa9;
+      background-color: ${(props) => props.theme.colors.primary};
       font-size: 5rem;
     }
   }
 `;
 
 export const Warning = styled.div`
-  background-color: #39393a;
+  background-color: ${(props) => props.theme.colors.shadow};
 
   border-radius: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 5px solid #e6e6e6;
+  border: 5px solid ${(props) => props.theme.colors.secondary};
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 10px 5px 25px grey;
   margin: 0 auto;
@@ -116,7 +116,7 @@ export const Warning = styled.div`
     margin-top: 50px;
   }
   .message {
-    color: #c6c5b9;
+    color: ${(props) => props.theme.colors.warning};
     font-weight: bold;
     text-align: center;
 
@@ -165,11 +165,11 @@ export const PhotosList = styled.div`
 `;
 
 export const UploadForm = styled.form`
-  background-color: #e6e6e6;
+  background-color: ${(props) => props.theme.colors.secondary};
   padding: 25px;
   border-radius: 35px;
   margin: 0 15px 50px;
-  border: 1px solid #8c7aa9;
+  border: 1px solid ${(props) => props.theme.colors.primary};
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 3px 1px 5px grey;
 
@@ -179,7 +179,7 @@ export const UploadForm = styled.form`
 
   span {
     font-weight: bolder;
-    text-shadow: 0.5px 1px #eaddff;
+    text-shadow: 0.5px 1px ${(props) => props.theme.colors.primarySecond};
     font-style: italic;
   }
 
@@ -200,14 +200,14 @@ export const UploadForm = styled.form`
     height: 15vh;
   }
   .submit-button {
-    background-color: #297373;
+    background-color: ${(props) => props.theme.colors.submit};
     padding: 8px;
     height: 4.2vh;
-    color: #e6e6e6;
+    color: ${(props) => props.theme.colors.secondary};
     font-weight: bold;
     cursor: pointer;
     border-radius: 20px;
-    border: 3px solid #8c7aa9;
+    border: 3px solid ${(props) => props.theme.colors.primary};
 
     @media ${devices.mobile} {
       height: 5.2vh;
@@ -225,9 +225,9 @@ export const UploadForm = styled.form`
     }
     &:hover {
       transition: all 0.2s;
-      border: 3px solid #297373;
-      color: #297373;
-      background-color: #e6e6e6;
+      border: 3px solid ${(props) => props.theme.colors.submit};
+      color: ${(props) => props.theme.colors.submit};
+      background-color: ${(props) => props.theme.colors.secondary};
     }
   }
   /* Estilização da área de arquivos */
@@ -241,19 +241,19 @@ export const UploadForm = styled.form`
     z-index: -1;
   }
   input[type="file"]:focus + label {
-    background-color: #297373;
+    background-color: ${(props) => props.theme.colors.submit};
   }
 
   label {
-    color: #297373;
+    color: ${(props) => props.theme.colors.submit};
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 10px;
     border-radius: 10px;
-    border: 3px solid #8c7aa9;
-    background-color: #eaddff;
+    border: 3px solid ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.primarySecond};
     @media ${devices.tablet} {
       width: 85%;
       display: flex;
@@ -261,26 +261,25 @@ export const UploadForm = styled.form`
       font-size: 1.2rem;
     }
     @media ${devices.laptop} {
-      width:70%;
+      width: 70%;
     }
 
-
     &:hover {
-      background-color: #297373;
+      background-color: ${(props) => props.theme.colors.submit};
     }
     &:hover,
     &:hover .material-symbols-outlined {
       transition: all 0.2s;
-      color: #e6e6e6;
+      color: ${(props) => props.theme.colors.secondary};
     }
 
     .material-symbols-outlined {
-      color: #297373;
+      color: ${(props) => props.theme.colors.submit};
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
     }
   }
 
   span {
-    color: #522a27;
+    color: ${(props) => props.theme.colors.textSecondary};
   }
 `;

@@ -1,15 +1,14 @@
 import styled from "styled-components";
-import { devices } from "../../mediaQueries";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #8c7aa9;
+  background-color: ${props => props.theme.colors.primary};
 
   border-radius: 15px;
   padding: 5px;
   text-align: center;
-  border: 4px solid #e6e6e6;
+  border: 4px solid ${props => props.theme.colors.secondary};
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 2px 2px 15px grey;
 
@@ -21,8 +20,8 @@ export const Container = styled.div`
   }
 
   span {
-    color: #e6e6e6;
+    color: ${props => props.theme.colors.secondary};
     font-weight: 600;
-    text-shadow: 1px 2px #39393a;
+    text-shadow: 1px 2px ${props => props.theme.colors.shadow};
   }
 `;

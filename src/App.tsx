@@ -4,9 +4,12 @@ import * as Item from './styles/App.styles';// Itens de estilo = S itens
 import * as Photos from './services/photos'
 import { Photo } from "./types/Photo";
 import { PhotoItem } from "./components/PhotoItem";
+import { ThemeProvider } from 'styled-components';
+import light from './styles/themes/light';
+import Switch from 'react-switch';
+
 const App = () => {
   const [addFileType, setAddFileType] = useState(false);
-
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -56,70 +59,91 @@ const App = () => {
     setAddFileType(true)
     let inputFile = (document.querySelector(".archive") as HTMLInputElement);
     let fileName = inputFile.value;
-    let spanFileName = document.querySelector(".file-name") as HTMLSpanElement;    
+    let spanFileName = document.querySelector(".file-name") as HTMLSpanElement;
     spanFileName.innerHTML = fileName;
   };
 
+
+  
+ 
   return (
 
-    <Item.Container>
-      <Item.Area>
-        <Item.Header>
-          <h1>
-            Galeria de fotos
-          </h1>
+    <ThemeProvider theme={light}>
+      <Item.Container>
+        <Item.Area>
+          <Item.Header>
+            <h1>
+              Galeria de fotos
+            </h1>
+            <Switch
+              onChange={() => { }}
+              checked={false}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={15}
+              width={35}
+              handleDiameter={25}
+              onColor="#eaddff"
+              offColor="#39393a"
+              onHandleColor="#39393a" 
+              offHandleColor="#eaddff"
+            //  #297373   #522a27
+            />
 
-        </Item.Header>
-        {/* {Botão extra?} */}
-        <Item.UploadAreaPhotos>
-          {/* {Área de upload} */}
-          <Item.UploadForm method="POST" onSubmit={handleFormSubmit} >
-            <label htmlFor="image">
-              <span className="material-symbols-outlined">
-                cloud_upload
-              </span>
-              Escolha uma imagem
-            <span className="file-name">Nenhuma selecionada</span>
-            </label>
-            <input type="file" name="image" id="image" className="archive" onChange={addingFileType} />
-           
-            <input type="submit" value="Enviar" className="submit-button" />
-            {uploading && <span>Enviando...</span>}
-          </Item.UploadForm>
+          </Item.Header>
+          {/* ADICIONAR BOTÃO!! FINALIZE PROJETO! */}
+          {/* {Botão extra?} */}
+          <Item.UploadAreaPhotos>
+            {/* {Área de upload} */}
+            <Item.UploadForm method="POST" onSubmit={handleFormSubmit} >
+              <label htmlFor="image">
+                <span className="material-symbols-outlined">
+                  cloud_upload
+                </span>
+                Escolha uma imagem
+                <span className="file-name">Nenhuma selecionada</span>
+              </label>
+              <input type="file" name="image" id="image" className="archive" onChange={addingFileType} />
 
-          {/* Quando houver carregamento das imagens na tela: */}
-          {loading &&
-            <Item.Warning>
-              <div className="emoji">⚠️</div>
-              <div className="message">Carregando as imagens da galeria de fotos...</div>
+              <input type="submit" value="Enviar" className="submit-button" />
+              {uploading && <span>Enviando...</span>}
+            </Item.UploadForm>
 
-            </Item.Warning>
-          }
+            {/* Quando houver carregamento das imagens na tela: */}
+            {loading &&
+              <Item.Warning>
+                <div className="emoji">⚠️</div>
+                <div className="message">Carregando as imagens da galeria de fotos...</div>
 
-          {!loading && photos.length > 0 &&
+              </Item.Warning>
+            }
 
-            <Item.PhotosList>
-              {photos.map((item, index) => (
-                <PhotoItem key={index} url={item.url} name={item.name} />
+            {!loading && photos.length > 0 &&
 
-              ))}
+              <Item.PhotosList>
+                {photos.map((item, index) => (
+                  <PhotoItem key={index} url={item.url} name={item.name} />
 
-            </Item.PhotosList>
-          }
-          {!loading && photos.length === 0 &&
+                ))}
 
-            <Item.Warning>
-              <div className="emoji">📸</div>
-              <div className="message">Não há fotos cadastradas. Faça o upload!</div>
+              </Item.PhotosList>
+            }
+            {!loading && photos.length === 0 &&
 
-            </Item.Warning>
-          }
+              <Item.Warning>
+                <div className="emoji">📸</div>
+                <div className="message">Não há fotos cadastradas. Faça o upload!</div>
 
-          {/* {área de fotos} */}
-        </Item.UploadAreaPhotos>
+              </Item.Warning>
+            }
 
-      </Item.Area>
-    </Item.Container>
+            {/* {área de fotos} */}
+          </Item.UploadAreaPhotos>
+
+        </Item.Area>
+      </Item.Container>
+    </ThemeProvider>
+
   );
 }
 
