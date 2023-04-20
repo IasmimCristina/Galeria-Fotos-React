@@ -5,14 +5,14 @@ import * as Photos from './services/photos'
 import { Photo } from "./types/Photo";
 import { PhotoItem } from "./components/PhotoItem";
 import {ContainerSwitch} from './components/SwitchContainer/index'
-import {  ThemeProvider } from 'styled-components';
+import {  DefaultTheme, ThemeProvider } from 'styled-components';
 import light from './styles/themes/light';
 import dark from './styles/themes/dark';
 import usePersistedState from './utils/usePersistedState'
 
 
 const App = () => {
-  const [theme, setTheme] = usePersistedState('theme',light);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme',light);
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([]);

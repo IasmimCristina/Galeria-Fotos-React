@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
+
+// Tipificação do theme e setThem no App.tsx:
+type Response<T> = [T, Dispatch<SetStateAction<T>>];
 
 // Hook relacionado ao salvamento no Local Storage.
-function usePersistedState(key: string, initialState: any) {
+function usePersistedState<T>(key: string, initialState: T): Response<T> {
   const [state, setState] = useState(() => {
     const storageValue = localStorage.getItem(key);
 
