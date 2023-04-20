@@ -1,15 +1,18 @@
 
-import { useState, useEffect, FormEvent, HTMLInputTypeAttribute } from "react";
+import { useState, useEffect, FormEvent, useContext,   } from "react";
 import * as Item from './styles/App.styles';// Itens de estilo = S itens
 import * as Photos from './services/photos'
 import { Photo } from "./types/Photo";
 import { PhotoItem } from "./components/PhotoItem";
-import { ThemeProvider } from 'styled-components';
+import {ContainerSwitch} from './components/SwitchContainer/index'
+import {  ThemeProvider } from 'styled-components';
 import light from './styles/themes/light';
-import Switch from 'react-switch';
+import dark from './styles/themes/dark';
+import usePersistedState from './utils/usePersistedState'
+
 
 const App = () => {
-  const [addFileType, setAddFileType] = useState(false);
+  const [theme, setTheme] = usePersistedState('theme',light);
   const [uploading, setUploading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -56,39 +59,32 @@ const App = () => {
     }
   };
   const addingFileType = () => {
-    setAddFileType(true)
+   
     let inputFile = (document.querySelector(".archive") as HTMLInputElement);
     let fileName = inputFile.value;
     let spanFileName = document.querySelector(".file-name") as HTMLSpanElement;
     spanFileName.innerHTML = fileName;
   };
 
+  // Troca dos temas:
+  const toggleThemes = () => {
+    setTheme(theme.title === 'light' ? dark : light);
+  }
+
+
 
   
  
   return (
 
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={theme}>
       <Item.Container>
         <Item.Area>
           <Item.Header>
             <h1>
               Galeria de fotos
             </h1>
-            <Switch
-              onChange={() => { }}
-              checked={false}
-              checkedIcon={false}
-              uncheckedIcon={false}
-              height={15}
-              width={35}
-              handleDiameter={25}
-              onColor="#eaddff"
-              offColor="#39393a"
-              onHandleColor="#39393a" 
-              offHandleColor="#eaddff"
-            //  #297373   #522a27
-            />
+         <ContainerSwitch  toggleTheme={toggleThemes} />
 
           </Item.Header>
           {/* ADICIONAR BOTÃO!! FINALIZE PROJETO! */}
