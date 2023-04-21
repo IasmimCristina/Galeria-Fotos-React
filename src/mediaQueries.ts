@@ -1,7 +1,7 @@
 //Tamanhos considerados:
 const sizes = {
   
-  mobile: '375px',  
+  mobile: '280px',  
   tablet: '768px',  
   laptop: '1440px',
  

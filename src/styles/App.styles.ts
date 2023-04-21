@@ -39,25 +39,24 @@ export const Header = styled.div`
   justify-content: center;
   gap: 1rem;
   width: 100vw;
-  padding: 1.2rem;
   background-color: ${(props) => props.theme.colors.primary};
 
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 10px 5px 15px grey;
   @media ${devices.mobile} {
-    height: 15vh;
+    height: 12vh;
     border-bottom: 10px solid ${(props) => props.theme.colors.shadow};
     margin-bottom: 20px;
   }
   @media ${devices.tablet} {
     border-bottom: 15px solid ${(props) => props.theme.colors.shadow};
     margin-bottom: 50px;
-    height: 20vh;
+    height: 15vh;
   }
   @media ${devices.laptop} {
     border-bottom: 15px solid ${(props) => props.theme.colors.shadow};
     margin-bottom: 80px;
-    height: 15vh;
+    height: 12vh;
   }
 
   h1 {
@@ -67,20 +66,22 @@ export const Header = styled.div`
 
     @media ${devices.mobile} {
       background-color: ${(props) => props.theme.colors.shadow};
-      font-size: 2.8rem;
+      font-size: 1.2rem;
       text-shadow: 2px 3px ${(props) => props.theme.colors.textShadow};
-      width: 80vw;
-      height: 90px;
+      width: 70vw;
+      height: 50px;
       padding: 15px;
       border-radius: 45px;
     }
     @media ${devices.tablet} {
       background-color: ${(props) => props.theme.colors.primary};
-      font-size: 4.5rem;
+      font-size: 3.5rem;
+      width: auto;
+      height: auto;
     }
     @media ${devices.laptop} {
       background-color: ${(props) => props.theme.colors.primary};
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 `;
@@ -121,7 +122,7 @@ export const Warning = styled.div`
     text-align: center;
 
     @media ${devices.mobile} {
-      font-size: 1.2rem;
+      font-size: 1rem;
       width: 150px;
     }
     @media ${devices.tablet} {
@@ -136,7 +137,7 @@ export const Warning = styled.div`
 
   .emoji {
     @media ${devices.mobile} {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
     }
     @media ${devices.tablet} {
       font-size: 4.5rem;
@@ -172,7 +173,7 @@ export const UploadForm = styled.form`
   border: 1px solid ${(props) => props.theme.colors.primary};
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 3px 1px 5px grey;
-
+  font-size: smaller;
   display: flex;
   gap: 5vw;
   align-items: center;
@@ -184,15 +185,16 @@ export const UploadForm = styled.form`
   }
 
   @media ${devices.mobile} {
-    height: 19vh;
+    padding: 15px;
+    height: 20vh;
     flex-direction: column;
-    gap: 1.5vh;
+    gap: 2vh;
   }
   @media ${devices.tablet} {
     width: 85%;
     flex-direction: row;
     gap: 1vw;
-    height: 17vh;
+    height: 10vh;
   }
   @media ${devices.laptop} {
     width: 85%;
@@ -201,7 +203,7 @@ export const UploadForm = styled.form`
   }
   .submit-button {
     background-color: ${(props) => props.theme.colors.submit};
-    padding: 8px;
+
     height: 4.2vh;
     color: ${(props) => props.theme.colors.secondary};
     font-weight: bold;
@@ -210,12 +212,12 @@ export const UploadForm = styled.form`
     border: 3px solid ${(props) => props.theme.colors.primary};
 
     @media ${devices.mobile} {
-      height: 5.2vh;
-      font-size: large;
+      height: 5vh;
+      font-size: small;
     }
     @media ${devices.tablet} {
       font-size: 1rem;
-      height: 4vh;
+      height: 3.5vh;
       width: 6rem;
     }
     @media ${devices.laptop} {
