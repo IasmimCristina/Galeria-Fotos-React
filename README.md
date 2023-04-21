@@ -5,10 +5,11 @@
 
 
 
-<center>
+<div align="center">
+ 
 # 📸 Galeria de fotos REACT TypeScript 📸
 
-</center>
+</div>
 
 
 ![Captura de tela de 2023-04-20 20-46-54](https://user-images.githubusercontent.com/100351576/233515322-84d191b6-64a9-4cb6-aa0e-18da15826a4a.png)
@@ -74,8 +75,13 @@ Vídeos e APIs usadas no projeto.
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
-
+<div align="center">
+ 
 ## Demonstração visual
+ 
+</div>
+
+
 
 - Modelo inicial modo claro:
 
