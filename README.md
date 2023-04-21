@@ -1,5 +1,20 @@
+![banners-gihub-final](https://user-images.githubusercontent.com/100351576/198029195-06625761-f2a2-4e25-8729-e6ad58541c57.gif)
 
+***
+
+
+
+
+<center>
 # 📸 Galeria de fotos REACT TypeScript 📸
+
+</center>
+
+
+![Captura de tela de 2023-04-20 20-46-54](https://user-images.githubusercontent.com/100351576/233515322-84d191b6-64a9-4cb6-aa0e-18da15826a4a.png)
+
+
+
 
 - Um calendário que utiliza Firebase para permitir que o usuário carregue imagens nele. Possui tema escuro e claro, e é responsivo.
 - Tecnologias usadas: Create React App, styled components e TypeScript
@@ -64,8 +79,20 @@ Vídeos e APIs usadas no projeto.
 
 - Modelo inicial modo claro:
 
+![Captura de tela de 2023-04-20 21-29-55](https://user-images.githubusercontent.com/100351576/233515670-95b8133b-be67-4d90-ab17-00e67af89263.png)
+
+![Captura de tela de 2023-04-20 21-28-25](https://user-images.githubusercontent.com/100351576/233515688-7a46ba98-5af2-47f4-9226-07a75b25cb15.png)
+
+
 - Responsividade:
 
+
+![Captura de tela de 2023-04-20 21-28-14](https://user-images.githubusercontent.com/100351576/233515590-22f62443-b79c-4f66-a654-d19d2eb09d0d.png)
+
+![Captura de tela de 2023-04-20 21-29-09](https://user-images.githubusercontent.com/100351576/233515644-3debda52-d383-4b11-867d-6a98bfecd147.png)
+
+
+![Captura de tela de 2023-04-20 21-29-55](https://user-images.githubusercontent.com/100351576/233515615-d10eb33f-d7be-42b8-a4b5-b105d69284fa.png)
 
 
 
@@ -100,3 +127,25 @@ Builda a aplicação na pasta  `build`.\
 [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 [React documentation](https://reactjs.org/).
+
+
+---
+
+<div align="center">
+
+## 🔗 Links 🕶️
+
+</div>
+
+<div align="center">
+      
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ias-cristina)
+      
+</div>
+
+---
+
+![banners-gihub-final](https://user-images.githubusercontent.com/100351576/198029195-06625761-f2a2-4e25-8729-e6ad58541c57.gif)
+
+
+
