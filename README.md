@@ -29,6 +29,19 @@
 - A preferência do modo escuro ou claro é salva no Local Storage.
 
 
+
+## Variáveis de ambiente 📑
+
+### Configurações como modelo para outros: 
+REACT_APP_FIREBASE_APIKEY=
+REACT_APP_FIREBASE_AUTHDOMAIN=
+REACT_APP_FIREBASE_PROJECTID=
+REACT_APP_FIREBASE_STORAGEBUCKET=
+REACT_APP_FIREBASE_MESSAGINGSENDERID=
+REACT_APP_FIREBASE_APPID=
+# --------------
+
+
 ## Referências 📚
 
 Vídeos e APIs usadas no projeto. 
