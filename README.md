@@ -106,12 +106,12 @@ Vídeos e APIs usadas no projeto.
 
 ## CRA - Scripts disponíveis:
 
-Neste projeto você pode run:
+Neste projeto você pode  fazer run:
 
 ### `npm start`
 
 Abre o app.\
-ABra [http://localhost:3000](http://localhost:3000) para ver no navegador.
+Abra [http://localhost:3000](http://localhost:3000) para ver no navegador.
 
 ### `npm test`
 
