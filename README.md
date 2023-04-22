@@ -12,6 +12,12 @@
 </div>
 
 
+<div align="center">
+
+LINK: [Link do build no VERCEL como exemplo aqui.](https://galeria-react-sooty.vercel.app/)
+
+</div>
+
 ![Captura de tela de 2023-04-20 20-46-54](https://user-images.githubusercontent.com/100351576/233515322-84d191b6-64a9-4cb6-aa0e-18da15826a4a.png)
 
 
@@ -33,12 +39,12 @@
 ## Variáveis de ambiente 📑
 
 ### Configurações como modelo para outros: 
-REACT_APP_FIREBASE_APIKEY=
-REACT_APP_FIREBASE_AUTHDOMAIN=
-REACT_APP_FIREBASE_PROJECTID=
-REACT_APP_FIREBASE_STORAGEBUCKET=
-REACT_APP_FIREBASE_MESSAGINGSENDERID=
-REACT_APP_FIREBASE_APPID=
+- REACT_APP_FIREBASE_APIKEY=
+- REACT_APP_FIREBASE_AUTHDOMAIN=
+- REACT_APP_FIREBASE_PROJECTID=
+- REACT_APP_FIREBASE_STORAGEBUCKET=
+- REACT_APP_FIREBASE_MESSAGINGSENDERID=
+- REACT_APP_FIREBASE_APPID=
 # --------------
 
 
